@@ -32,16 +32,17 @@ app.use('/api/comment', commentRoutes)
 app.get('/', (req, res) => {
   res.status(200).send('Welcome To MERN Stack Tutorial');
 });
+app.use(cors({
+    origin:["http://localhost:5173"],
+    methods:["POST","DELETE","GET","PUT"],
+    credentials: true
+  }));
 // app.use(express.static(path.join(__dirname, '/frontend/dist')))
 
 // app.get('*', (req, res)=>{
 //     res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'))
 // })
-app.use(cors({
-    origin:[""],
-    methods:["POST","DELETE","GET","PUT"],
-    credentials: true
-  }));
+
   
 app.listen(3000, ()=>{
     console.log('Server is running on port 3000!');
