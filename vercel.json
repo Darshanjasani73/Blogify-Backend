@@ -8,7 +8,7 @@
   
     "routes":[
         {
-            "src":"/signup",
+            "src":"/sign-in",
             "dest":"index.js"
         },
         {
