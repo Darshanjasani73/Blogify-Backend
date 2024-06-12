@@ -23,14 +23,14 @@ mongoose.connect(process.env.MONGO)
 const app = express();
 
 // CORS configuration
-const corsOptions = {
+const cors = {
     origin: ["https://blogify-frontend-two.vercel.app"], // replace with your actual frontend URL
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"], // add other headers if needed
     credentials: true,
 };
 
-app.use(cors(corsOptions));
+app.use(cors(cors));
 app.use(express.json());
 app.use(cookieParser());
 
