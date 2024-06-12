@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
   res.status(200).send('Welcome To MERN Stack Tutorial');
 });
 app.use(cors({
-    origin:["https://blogify-frontend-iota.vercel.app/"],
+    origin:["https://blogify-frontend-iota.vercel.app"],
     methods:["POST","DELETE","GET","PUT"],
     credentials: true
   }));
