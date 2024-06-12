@@ -7,7 +7,6 @@ import authRoutes from './routes/auth.route.js';
 import postRoutes from './routes/post.route.js';
 import commentRoutes from './routes/comment.route.js';
 import cookieParser from 'cookie-parser';
-import path from 'path';
 import errorHandler from './utils/mdw.js';
 
 dotenv.config();
@@ -23,7 +22,6 @@ mongoose.connect(process.env.MONGO)
 const app = express();
 
 // CORS configuration
-
 app.use(cors({
     origin: ["https://blogify-frontend-two.vercel.app"], // Your actual frontend URL
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -43,12 +41,6 @@ app.use('/api/comment', commentRoutes);
 app.get('/', (req, res) => {
     res.status(200).send('Welcome To MERN Stack Tutorial');
 });
-
-// Static files (if needed, uncomment these lines)
-// app.use(express.static(path.join(__dirname, '/frontend/dist')));
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
-// });
 
 // Error handler
 app.use(errorHandler);
