@@ -18,8 +18,12 @@ mongoose.connect(process.env.MONGO)
 .catch((err)=>{
     console.log(err);
 })
+app.use(cors({
+    origin:["https://blogify-frontend-two.vercel.app"],
+    methods:["POST","DELETE","GET","PUT"],
+    credentials: true
+  }));
 
-const __dirname = path.resolve()
 
 const app = express()
 app.use(express.json())
@@ -32,11 +36,7 @@ app.use('/api/comment', commentRoutes)
 app.get('/', (req, res) => {
   res.status(200).send('Welcome To MERN Stack Tutorial');
 });
-app.use(cors({
-    origin:["https://blogify-frontend-iota.vercel.app"],
-    methods:["POST","DELETE","GET","PUT"],
-    credentials: true
-  }));
+
 // app.use(express.static(path.join(__dirname, '/frontend/dist')))
 
 // app.get('*', (req, res)=>{
