@@ -23,7 +23,7 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-    origin: ["https://blogify-frontend-two.vercel.app"], // Your actual frontend URL
+    origin: ["https://blogify-blog-webapp.vercel.app/"], // Your actual frontend URL
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"], // Add other headers if needed
     credentials: true,
